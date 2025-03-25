@@ -1,0 +1,132 @@
+.app{
+  margin: 0;
+}
+.login , .signup{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+form{
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  border: 1px solid gray;
+  border-radius: 8px;
+  background-color: rgb(244, 244, 244);
+  width: 320px;
+  height: 250px;
+}
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  background-color: #ffdf3f;
+  padding: 0 10px;
+}
+
+.navbar-left, .navbar-right, .login{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
+
+.product-item{
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+}
+.logout-nav{
+  cursor: pointer;
+}
+.login-nav{
+  display: flex;
+  gap: 10px;
+}
+.login{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.logo{
+  width: 80px;
+  height: auto;
+}
+.product-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: fit-content;
+}
+.product-item{
+  max-width: 400px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0;
+}
+.product-item .desc{
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.product-item .desc p:nth-child(1){
+  font-weight: 800;
+}
+.product-item .desc p:nth-child(2){
+  color: green;
+}
+.product-item .desc p:nth-child(3){
+  color: gray;
+}
+.sidebar{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 200px;
+  background-color: #d4b933;
+}
+.sidebar-item{
+  padding: 10px;
+  border: 1px solid #d4b933;
+  border-radius: 8px;
+}
+.sidebar-item:hover{
+  border: 1px solid #806a00;
+}
+.products-page{
+  display: flex;
+}
+.remove-prod{
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 4px;
+  border-radius: 8px;
+  margin: 10px;
+}
+.remove-prod:hover{
+  background-color: rgb(159, 1, 1);
+}
+
+.add-to-cart{
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(75, 254, 75);
+  color: white;
+  width: 200px;
+  align-self: center;
+  margin: 10px;
+  font-weight: 600;
+}
