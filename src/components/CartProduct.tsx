@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import { ProductType } from "../types/productTypes"
 import { getProduct } from "../api/product"
 import { useCartContext } from "../context/CartContext"
-import { removeProduct } from "../api/cart"
+import { removeProduct, updateQte } from "../api/cart"
 
 const CartProduct = ({ productId, quantity }: { productId: string, quantity: number }) => {
 
@@ -24,6 +24,16 @@ const CartProduct = ({ productId, quantity }: { productId: string, quantity: num
         setCart(data)
     }
 
+    const handleAddQte = async () => {
+        const res = await updateQte(cart._id, productId, quantity + 1);
+        setCart(res);
+    }
+
+    const handleSubQte = async () => {
+        const res = await updateQte(cart._id, productId, quantity - 1);
+        setCart(res);
+    }
+
     return (
         <div className="product-item">
             <img src={product?.imageUrl} alt="" />
@@ -31,9 +41,9 @@ const CartProduct = ({ productId, quantity }: { productId: string, quantity: num
                 <p>{product?.name}</p>
                 <p>{product?.price}</p>
                 <div className="qte">
-                    <button>-</button>
+                    <button onClick={handleSubQte}><i className="fa-solid fa-minus"></i></button>
                     <p>{quantity}</p>
-                    <button>+</button>
+                    <button onClick={handleAddQte}><i className="fa-solid fa-plus"></i></button>
                 </div>
                 <button className="remove-prod" onClick={handleRemove}>remove product</button>
             </div>

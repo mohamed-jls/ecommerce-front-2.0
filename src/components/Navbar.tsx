@@ -11,6 +11,7 @@ const Navbar = () => {
                 <img className='logo' src="https://www.freeiconspng.com/thumbs/logo-design/circle-logo-brand-design-png-transparent-image-19.png" alt="" />
                 <Link to='/products'><i className="fa-solid fa-bag-shopping"></i>   Products</Link>
                 {authInfo && <Link to='/cart'><i className="fa-solid fa-cart-shopping"></i>   Cart</Link>}
+                {authInfo?.isAdmin && <Link to='/admin'><i className="fa-solid fa-user-secret"></i>   Admin</Link>}
             </div>
             <div className='navbar-right'>
                 {authInfo ? (
